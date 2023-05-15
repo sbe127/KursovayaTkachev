@@ -5,5 +5,5 @@ Compares : 10
 
 Linear search
 Time: 0 ms
-Compares : 913
+Compares : 590
 

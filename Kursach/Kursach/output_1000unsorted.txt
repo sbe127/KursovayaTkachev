@@ -1,9 +1,9 @@
 Random array search
 Linear search
-Time: 0 ms
-Compares : 3935
+Time: 3 ms
+Compares : 241984
 
 Bin search
 Time: 1 ms
-Compares : 98
+Compares : 4734
 
