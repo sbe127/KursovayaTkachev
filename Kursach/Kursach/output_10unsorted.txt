@@ -1,0 +1,9 @@
+Random array search
+Linear search
+Time: 1 ms
+Compares : 54
+
+Bin search
+Time: 0 ms
+Compares : 25
+

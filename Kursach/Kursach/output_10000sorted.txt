@@ -1,0 +1,9 @@
+Sorted array search
+Bin search
+Time: 0 ms
+Compares : 13
+
+Linear search
+Time: 0 ms
+Compares : 10000
+

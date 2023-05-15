@@ -4,11 +4,11 @@
 #include <fstream>
 #include <algorithm>
 
-int bin_search(const std::vector<int>& a, int elem, int& compares) {
-    int left = 0;
-    int right = a.size() - 1;
+long long bin_search(const std::vector<long long>& a, long long elem, long long& compares) {
+    long long left = 0;
+    long long right = a.size() - 1;
     while (left < right) {
-        int m = (left + right) / 2;
+        long long m = (left + right) / 2;
         if (a[m] > elem) {
             left = m + 1;
         }
@@ -23,8 +23,8 @@ int bin_search(const std::vector<int>& a, int elem, int& compares) {
     return left;
 }
 
-int linear_search(const std::vector<int>& a, int elem, int& compares) {
-    for (int i = 0; i < a.size(); i++) {
+long long linear_search(const std::vector<long long>& a, long long elem, long long& compares) {
+    for (long long i = 0; i < a.size(); i++) {
         compares++;
         if (a[i] == elem) {
             return i;
@@ -33,39 +33,39 @@ int linear_search(const std::vector<int>& a, int elem, int& compares) {
     return a.size();
 }
 
-std::vector<int> generate_sorted_array(int size) {
-    std::vector<int> ans;
+std::vector<long long> generate_sorted_array(long long size) {
+    std::vector<long long> ans;
     if (size < 1) {
         return ans;
     }
     std::ofstream data("input_" + std::to_string(size) + "sorted.txt");
-    int last = std::rand();
+    long long last = std::rand();
     data << last << ' ';
-    for (int i = 1; i < size; i++) {
+    for (long long i = 1; i < size; i++) {
         last += std::abs(std::rand());
         data << last << ' ';
     }
     data.close();
     std::ifstream fin("input_" + std::to_string(size) + "sorted.txt");
-    int elem;
+    long long elem;
     while (fin >> elem) {
         ans.push_back(elem);
     }
     return ans;
 }
 
-std::vector<int> generate_random_array(int size) {
-    std::vector<int> ans;
+std::vector<long long> generate_random_array(long long size) {
+    std::vector<long long> ans;
     if (size < 1) {
         return ans;
     }
     std::ofstream data("input_" + std::to_string(size) + "unsorted.txt");
-    for (int i = 0; i < size; i++) {
+    for (long long i = 0; i < size; i++) {
         data << std::rand() << ' ';
     }
     data.close();
     std::ifstream fin("input_" + std::to_string(size) + "unsorted.txt");
-    int elem;
+    long long elem;
     while (fin >> elem) {
         ans.push_back(elem);
     }
@@ -85,12 +85,12 @@ int main() {
             std::cout << "Enter the size of array\n";
             int size;
             std::cin >> size;
-            std::vector<int> a = generate_sorted_array(size);
+            std::vector<long long> a = generate_sorted_array(size);
             std::cout << "Enter the index of elements which you want to found\n";
             std::cout << "Enter random number if you want to search not existed element\n";
-            int ind;
+            long long ind;
             std::cin >> ind;
-            int elem;
+            long long elem;
             if (ind < 0 || ind > size) {
                 ind = -1;
                 elem = -100000000;
@@ -98,10 +98,10 @@ int main() {
             else {
                 elem = a[ind];
             }
-            int compares = 0;
+            long long compares = 0;
             std::ofstream fout("output_" + std::to_string(size) + "sorted.txt");
             auto start_time = std::clock();
-            int bin_search_ind = bin_search(a, elem, compares);
+            long long bin_search_ind = bin_search(a, elem, compares);
             fout << "Sorted array search\n";
             fout << "Bin search\n";
             fout << "Time: " << std::clock() - start_time << " ms" << '\n';
@@ -116,18 +116,18 @@ int main() {
         else if (type == 2) {
             //========Unsorted array (a lot of searches)===========
             std::cout << "Enter the size of array\n";
-            int size;
+            long long size;
             std::cin >> size;
-            std::vector<int> a = generate_random_array(size);
-            int searchesAmount;
+            std::vector<long long> a = generate_random_array(size);
+            long long searchesAmount;
             std::cout << "Enter a lot of searches to found\n";
             std::cin >> searchesAmount;
 
-            int compares = 0;
+            long long compares = 0;
             auto start_time = std::clock();
-            for (int i = 0; i < searchesAmount; i++) {
-                int ind = std::rand() % size + 1;
-                int elem;
+            for (long long i = 0; i < searchesAmount; i++) {
+                long long ind = std::rand() % size + 1;
+                long long elem;
                 if (ind == size) {
                     elem = -1000000000;
                 }
@@ -144,9 +144,9 @@ int main() {
             start_time = std::clock();
             compares = 0;
             std::sort(a.begin(), a.end());
-            for (int i = 0; i < searchesAmount; i++) {
-                int ind = std::rand() % size + 1;
-                int elem;
+            for (long long i = 0; i < searchesAmount; i++) {
+                long long ind = std::rand() % size + 1;
+                long long elem;
                 if (ind == size) {
                     elem = -1000000000;
                 }

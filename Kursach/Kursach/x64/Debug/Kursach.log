@@ -1,5 +1,3 @@
 ﻿  Kursach.cpp
-C:\Users\Владислав\Desktop\Study\ОАиП\Курсач\Курсовая программа\Kursach\Kursach\Kursach.cpp(9,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Владислав\Desktop\Study\ОАиП\Курсач\Курсовая программа\Kursach\Kursach\Kursach.cpp(21,24): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Владислав\Desktop\Study\ОАиП\Курсач\Курсовая программа\Kursach\Kursach\Kursach.cpp(33,20): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Владислав\Desktop\Study\ОАиП\Курсач\Курсовая программа\Kursach\Kursach\Kursach.cpp(27,29): warning C4018: <: несоответствие типов со знаком и без знака
   Kursach.vcxproj -> C:\Users\Владислав\Desktop\Study\ОАиП\Курсач\Курсовая программа\Kursach\x64\Debug\Kursach.exe
